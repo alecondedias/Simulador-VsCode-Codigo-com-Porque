@@ -1,0 +1,25 @@
+Código com Porquê
+Simulador no estilo VS Code para construir, linha por linha, a tela do app Lista de Tarefas
+(React Native, Expo Router e TypeScript), entendendo por que cada arquivo e cada linha existem.
+
+COMO ABRIR
+Abra o arquivo index.html no Google Chrome ou no Microsoft Edge.
+Não precisa de internet nem de instalação. Use um computador com teclado.
+
+COMO USAR
+1. Na tela inicial, escolha as opções (dicas, tutorial, tamanho do texto e sons) e clique em Começar.
+2. A faixa "Faça agora" mostra sempre o próximo passo. O código a digitar aparece em cinza.
+3. Linhas repetitivas entram com a tecla Tab. Salve com Ctrl+S para ver o celular mudar.
+4. O progresso fica guardado neste navegador: use "Continuar de onde parei" para voltar.
+5. Para continuar em outro computador, clique em Salvar (no topo) e anote o código.
+   Na tela inicial do outro computador, clique em "Tenho um código" e digite esse código.
+
+ATALHOS DO PROFESSOR
+Ctrl+Enter completa a linha que está sendo digitada.
+O botão Missões, no topo, leva a qualquer missão (as anteriores são concluídas sozinhas).
+
+ORGANIZAÇÃO DOS ARQUIVOS
+index.html ........ estrutura das telas
+css/ .............. aparência (base, editor e celular)
+js/dados/ ......... conteúdo: código, explicações, glossário, perguntas e missões
+js/nucleo/ ........ lógica do simulador (editor, terminal, celular, laboratório, progresso, fluxo)

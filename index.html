@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Código com Porquê</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;display=swap">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/editor.css">
+<link rel="stylesheet" href="css/celular.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arquivos" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M9 3h7l4 4v11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="M16 3v4h4M5 7v12a2 2 0 0 0 2 2h9"/></symbol>
+    <symbol id="i-busca" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M15 15l5 5"/></symbol>
+    <symbol id="i-ramo" viewBox="0 0 24 24"><circle cx="7" cy="5" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="7" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="M7 7v10M17 9c0 5-10 3-10 8"/></symbol>
+    <symbol id="i-extensoes" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M4 9h6v6H4zM10 15h6v6h-6zM4 15h6v6H4zM14 3h6v6h-6z"/></symbol>
+    <symbol id="i-seta-dir" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-seta-baixo" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-novo-arquivo" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M13 3v6h6M12 12v6M9 15h6"/></symbol>
+    <symbol id="i-nova-pasta" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 10v6M9 13h6"/></symbol>
+    <symbol id="i-recolher" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M8 12h8"/></symbol>
+    <symbol id="i-lampada" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-4 12.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26A7 7 0 0 0 12 2zm-3 18h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-voltar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 14L4 9l5-5"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 9h10a6 6 0 0 1 0 12h-2"/></symbol>
+    <symbol id="i-mapa" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="10" width="7" height="5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="16" width="7" height="5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="M6.5 8v8M10 12.5h4"/></symbol>
+    <symbol id="i-cartoes" viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="M7 3h12a2 2 0 0 1 2 2v12"/></symbol>
+    <symbol id="i-som" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M4 9v6h4l5 4V5L8 9z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></symbol>
+    <symbol id="i-mudo" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M4 9v6h4l5 4V5L8 9z"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M16 9l5 6M21 9l-5 6"/></symbol>
+    <symbol id="i-lista" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.3" fill="currentColor"/><circle cx="4.5" cy="12" r="1.3" fill="currentColor"/><circle cx="4.5" cy="18" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="i-mao" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8 13V5.5a1.5 1.5 0 0 1 3 0V12M11 11.5v-2a1.5 1.5 0 0 1 3 0V12M14 10.5a1.5 1.5 0 0 1 3 0V12M17 11.5a1.5 1.5 0 0 1 3 0v3.5a6 6 0 0 1-6 6h-1.5a6 6 0 0 1-4.6-2.2L5 15.5a1.6 1.6 0 0 1 2.4-2.1L8 14"/></symbol>
+    <symbol id="i-frasco" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M9 3h6M10 3v6L4.5 18.5A2 2 0 0 0 6.3 21.5h11.4a2 2 0 0 0 1.8-3L14 9V3"/><path stroke="currentColor" stroke-width="1.6" d="M7 15h10"/></symbol>
+    <symbol id="i-raio" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M4 12h16"/></symbol>
+    <symbol id="i-cadeado" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path fill="currentColor" d="M12 20.5l-3.6-4.3a5.6 5.6 0 0 1 7.2 0zM3 9.4a14 14 0 0 1 18 0l-1.9 2.3a11 11 0 0 0-14.2 0zm3.1 3.7a9.2 9.2 0 0 1 11.8 0l-1.9 2.3a6.3 6.3 0 0 0-8 0z"/></symbol>
+    <symbol id="i-bateria" viewBox="0 0 24 24"><rect x="3" y="7" width="16" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="5" y="9" width="10" height="6" rx="1" fill="currentColor"/><path stroke="currentColor" stroke-width="2" d="M21 10.5v3"/></symbol>
+    <symbol id="i-sinal" viewBox="0 0 24 24"><path fill="currentColor" d="M3 20h3v-4H3zm5 0h3v-8H8zm5 0h3V8h-3zm5 0h3V4h-3z"/></symbol>
+    <symbol id="i-casa" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-bussola" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="currentColor" d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+    <symbol id="i-imagem" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="10" r="1.8" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M4 18l5-5 3 3 3-3 5 5"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path stroke="currentColor" stroke-width="1.6" d="M14 14h2v2h-2zM18 14h2M14 18h2M18 18h2v2"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M7 9l3 3-3 3M12 15h5"/></symbol>
+    <symbol id="i-erro" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M9 9l6 6M15 9l-6 6"/></symbol>
+    <symbol id="i-salvar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M5 4h11l3 3v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M8 4v5h7V4M8 20v-6h8v6"/></symbol>
+    <symbol id="i-ajustes" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-aviso" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 4l9 16H3z"/><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 10v4M12 17v.01"/></symbol>
+    <symbol id="i-codigo" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></symbol>
+    <symbol id="i-recomecar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5M4 4v4.5h4.5"/></symbol>
+    <symbol id="i-olho" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-chave" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"/></symbol>
+    <symbol id="i-logo-app" viewBox="0 0 24 24"><rect x="4.5" y="5" width="15" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9.5" cy="10" r="1.6" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5.5 17l4.5-4 3 2.5 3-3 3.5 3.5"/></symbol>
+  </defs>
+</svg>
+
+<div id="app">
+  <!-- Tela de preparo -->
+  <section id="tela-preparo" class="tela" aria-labelledby="titulo-preparo">
+    <div class="preparo-grade">
+      <div>
+        <div class="marca-linha"><span class="marca-selo">{?}</span><span class="marca-nome">Simulador de código no estilo VS Code</span></div>
+        <h1 id="titulo-preparo" class="preparo-titulo">Cada linha do app com o seu <em>porquê</em>.</h1>
+        <p class="preparo-lead">Você vai construir a tela principal do app <strong>Lista de Tarefas</strong> em React Native, num editor igual ao VS Code, vendo o celular mudar a cada linha. O código a digitar já aparece em cinza: o desafio não é adivinhar, é <strong>entender por que cada linha existe</strong>.</p>
+        <div class="miniatura" aria-hidden="true">
+          <div class="mini-faixa"><b>Faça agora:</b> digite a linha por cima do texto cinza e salve com Ctrl+S</div>
+          <div class="mini-vs"><div><span class="n">31</span><span class="t-attr">          value</span><span class="t-pon">={</span><span class="t-var">taskName</span><span class="t-pon">}</span></div><div><span class="n">32</span><span class="t-attr">          onChangeText</span><span class="t-pon">={</span><span class="t-var">set</span><span class="fantasma">TaskName}</span></div><div class="mini-cartao"><b>Por que esta linha?</b> Sem ela, a memória <code>taskName</code> nunca muda e o campo fica travado.</div><div><span class="n">33</span><span class="t-ang">        /&gt;</span></div></div>
+          <div class="mini-cel"><div class="mini-tela"><div class="cab">Home</div><div class="sec"><b>Nova Tarefa</b><div class="campo">Digite o nome da tarefa...</div><div class="btn">+ Adicionar Tarefa</div></div><div class="sec"><b>Aqui vai o Filtro</b></div></div></div>
+        </div>
+        <ol class="missoes-lista" id="lista-missoes"></ol>
+      </div>
+      <div class="preparo-cartao">
+        <h2>Preparar o simulador</h2>
+        <div class="opcao">
+          <span class="opcao-rotulo" id="rot-dicas">Dicas nas Pausas do porquê</span>
+          <div class="segmentado" role="radiogroup" aria-labelledby="rot-dicas" id="op-dicas">
+            <button type="button" role="radio" aria-checked="true" data-valor="limitado">Limitadas (6)</button>
+            <button type="button" role="radio" aria-checked="false" data-valor="ilimitado">Ilimitadas</button>
+          </div>
+        </div>
+        <div class="opcao">
+          <span class="opcao-rotulo" id="rot-tutorial">Tutorial guiado</span>
+          <span class="opcao-ajuda">Na primeira vez de cada ação, a tela escurece e só o lugar certo fica aceso.</span>
+          <div class="segmentado" role="radiogroup" aria-labelledby="rot-tutorial" id="op-tutorial">
+            <button type="button" role="radio" aria-checked="true" data-valor="sim">Fazer o tutorial</button>
+            <button type="button" role="radio" aria-checked="false" data-valor="nao">Pular o tutorial</button>
+          </div>
+        </div>
+        <div class="opcao">
+          <span class="opcao-rotulo" id="rot-fonte">Tamanho do texto</span>
+          <div class="segmentado" role="radiogroup" aria-labelledby="rot-fonte" id="op-fonte">
+            <button type="button" role="radio" aria-checked="true" data-valor="normal">Normal</button>
+            <button type="button" role="radio" aria-checked="false" data-valor="projetor">Projetor (maior)</button>
+          </div>
+        </div>
+        <div class="opcao">
+          <span class="opcao-rotulo" id="rot-som">Sons</span>
+          <div class="segmentado" role="radiogroup" aria-labelledby="rot-som" id="op-som">
+            <button type="button" role="radio" aria-checked="true" data-valor="sim">Ligados</button>
+            <button type="button" role="radio" aria-checked="false" data-valor="nao">Desligados</button>
+          </div>
+        </div>
+        <div class="opcao">
+          <label class="opcao-rotulo" for="op-missao">Começar pela missão</label>
+          <span class="opcao-ajuda">Para o professor: as missões anteriores são concluídas automaticamente.</span>
+          <select id="op-missao" class="botao" style="font-weight:500"></select>
+        </div>
+        <div class="preparo-acoes">
+          <button type="button" class="botao primario" id="btn-comecar"><svg class="icone"><use href="#i-play"/></svg>Começar</button>
+          <button type="button" class="botao gelo" id="btn-continuar" hidden><svg class="icone"><use href="#i-recomecar"/></svg><span>Continuar de onde parei</span></button>
+          <button type="button" class="botao discreto" id="btn-codigo"><svg class="icone"><use href="#i-chave"/></svg>Tenho um código</button>
+        </div>
+        <div class="preparo-nota">
+          <span>Use um computador com teclado. Atalho do professor: <kbd>Ctrl</kbd> + <kbd>Enter</kbd> completa a linha que está sendo digitada.</span>
+          <span class="so-offline">Funciona sem internet: basta abrir o arquivo index.html.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simulador -->
+  <section id="tela-sim" class="tela" hidden>
+    <header id="barra-missao">
+      <div class="barra-marca"><span class="marca-selo">{?}</span><span class="marca-nome">Código com Porquê</span></div>
+      <div class="barra-missao-info">
+        <span class="pilula-missao" id="pilula-missao">Missão 1 de 6</span>
+        <span class="titulo-missao" id="titulo-missao"></span>
+      </div>
+      <div class="progresso" aria-live="polite"><div class="progresso-trilho"><div class="progresso-barra" id="barra-progresso"></div></div><span id="texto-progresso">passo 1 de 1</span></div>
+      <div class="barra-acoes">
+        <button type="button" class="botao discreto pequeno" id="btn-voltar" title="Desfaz o último passo"><svg class="icone"><use href="#i-voltar"/></svg>Voltar uma etapa</button>
+        <button type="button" class="botao discreto pequeno" id="btn-mapa"><svg class="icone"><use href="#i-mapa"/></svg>Mapa do projeto</button>
+        <button type="button" class="botao discreto pequeno" id="btn-cartoes"><svg class="icone"><use href="#i-cartoes"/></svg>Cartões <span class="contador-cartoes" id="cont-cartoes">0</span></button>
+        <button type="button" class="botao discreto pequeno" id="btn-salvar" title="Salva o progresso e mostra o código para continuar depois"><svg class="icone"><use href="#i-salvar"/></svg>Salvar</button>
+        <button type="button" class="botao discreto pequeno" id="btn-som" aria-pressed="true" title="Ligar ou desligar os sons"><svg class="icone"><use href="#i-som"/></svg><span>Som</span></button>
+        <button type="button" class="botao discreto pequeno" id="btn-menu"><svg class="icone"><use href="#i-lista"/></svg>Missões</button>
+      </div>
+    </header>
+
+    <div id="faca-agora" role="status" aria-live="polite">
+      <svg class="faca-icone"><use href="#i-mao"/></svg>
+      <span class="faca-rotulo">Faça agora</span>
+      <span class="faca-texto" id="faca-texto"></span>
+      <span id="faca-acoes"></span>
+    </div>
+
+    <main id="mesa">
+      <section id="janela" class="vscode" aria-label="Editor no estilo VS Code">
+        <div class="vs-titulo">
+          <div class="vs-menu"><svg class="vs-logo"><use href="#i-codigo"/></svg><span>Arquivo</span><span>Editar</span><span>Seleção</span><span>Exibir</span><span>Terminal</span></div>
+          <div class="vs-nome-janela" id="nome-janela">lista-de-tarefas</div>
+          <div class="vs-controles" aria-hidden="true"><span>&#9472;</span><span>&#9633;</span><span>&#10005;</span></div>
+        </div>
+        <div class="vs-corpo">
+          <nav class="vs-atividades" aria-hidden="true">
+            <span class="ativo"><svg><use href="#i-arquivos"/></svg></span>
+            <span><svg><use href="#i-busca"/></svg></span>
+            <span><svg><use href="#i-ramo"/></svg></span>
+            <span><svg><use href="#i-extensoes"/></svg></span>
+          </nav>
+          <aside class="vs-explorador" aria-label="Explorador de arquivos">
+            <div class="exp-cab">Explorador</div>
+            <div class="exp-projeto">
+              <svg class="icone" style="width:14px;height:14px"><use href="#i-seta-baixo"/></svg>
+              <span class="exp-nome">lista-de-tarefas</span>
+              <span class="exp-acoes">
+                <button type="button" id="btn-novo-arquivo" title="Novo arquivo" aria-label="Novo arquivo"><svg><use href="#i-novo-arquivo"/></svg></button>
+                <button type="button" id="btn-nova-pasta" title="Nova pasta" aria-label="Nova pasta"><svg><use href="#i-nova-pasta"/></svg></button>
+                <button type="button" id="btn-recolher" title="Recolher pastas" aria-label="Recolher pastas"><svg><use href="#i-recolher"/></svg></button>
+              </span>
+            </div>
+            <div class="exp-arvore" id="arvore" role="tree"></div>
+          </aside>
+          <div class="vs-editor-col">
+            <div class="vs-abas" id="abas" role="tablist"></div>
+            <div class="vs-migalhas" id="migalhas"></div>
+            <div class="vs-editor" id="editor" tabindex="0" aria-label="Código"></div>
+          </div>
+        </div>
+        <div class="vs-painel">
+          <div class="vs-painel-abas" role="tablist">
+            <button type="button" role="tab" id="aba-problemas" aria-selected="false">Problemas<span class="cont" id="cont-problemas">0</span></button>
+            <button type="button" role="tab" id="aba-terminal" aria-selected="true">Terminal</button>
+          </div>
+          <div class="vs-painel-corpo" id="painel-problemas" hidden></div>
+          <div class="vs-painel-corpo" id="painel-terminal"></div>
+        </div>
+        <footer class="vs-status" id="status"></footer>
+      </section>
+
+      <aside id="lado" aria-label="Pré-visualização">
+        <div class="lado-abas" role="tablist">
+          <button type="button" role="tab" id="aba-celular" aria-selected="true">Celular</button>
+          <button type="button" role="tab" id="aba-catalogo" aria-selected="false" hidden>Catálogo de estilos</button>
+          <button type="button" role="tab" id="aba-bancada" aria-selected="false" hidden>Bancada</button>
+        </div>
+        <div id="celular-wrap">
+          <div id="raio-x" hidden></div>
+          <div class="celular" id="celular">
+            <div class="navegador-barra"><span class="bolinhas"><i></i><i></i><i></i></span><span class="url" id="url-navegador">localhost:8081</span></div>
+            <div class="cel-tela" id="cel-tela"><div class="cel-escala" id="cel-escala"></div></div>
+          </div>
+          <div class="cel-legenda" id="cel-legenda">Celular com Expo Go</div>
+          <div class="cel-ferramentas" id="cel-ferramentas"></div>
+        </div>
+        <div id="catalogo" class="catalogo" hidden></div>
+        <div id="bancada" class="bancada" hidden></div>
+      </aside>
+      <div id="laboratorio" class="lab" role="dialog" aria-label="Laboratório de estilos" hidden></div>
+    </main>
+  </section>
+
+  <section id="tela-relatorio" class="tela" hidden></section>
+</div>
+
+<div id="holofote" hidden><div class="furo"></div></div>
+<div id="bolha-tutorial" hidden></div>
+<div id="modal" class="modal" hidden></div>
+<div id="toast" hidden></div>
+<canvas id="confete" hidden></canvas>
+
+<!-- Dados (conteúdo) -->
+<script src="js/dados/arquivos.js"></script>
+<script src="js/dados/explicacoes-modelo.js"></script>
+<script src="js/dados/explicacoes-app.js"></script>
+<script src="js/dados/glossario.js"></script>
+<script src="js/dados/perguntas.js"></script>
+<script src="js/dados/missoes.js"></script>
+<!-- Lógica -->
+<script src="js/nucleo/util.js"></script>
+<script src="js/nucleo/sons.js"></script>
+<script src="js/nucleo/sintaxe.js"></script>
+<script src="js/nucleo/estado.js"></script>
+<script src="js/nucleo/explorador.js"></script>
+<script src="js/nucleo/editor.js"></script>
+<script src="js/nucleo/terminal.js"></script>
+<script src="js/nucleo/celular.js"></script>
+<script src="js/nucleo/lado.js"></script>
+<script src="js/nucleo/laboratorio.js"></script>
+<script src="js/nucleo/porque.js"></script>
+<script src="js/nucleo/tutorial.js"></script>
+<script src="js/nucleo/fluxo.js"></script>
+<script src="js/nucleo/relatorio.js"></script>
+<script src="js/nucleo/progresso.js"></script>
+<script src="js/nucleo/app.js"></script>
+</body>
+</html>
